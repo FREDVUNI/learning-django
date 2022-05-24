@@ -1,0 +1,32 @@
+{% extends 'guest/base.html' %}
+{% block title %}
+    Sign-In
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <h5 class="m-3">GuestBook</h5>
+                <div class="card-body">
+                    <form action="{% url 'sign' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            <label for="">Comment</label>
+                            {{ form.comment }}
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-sm">Sign GuestBook</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

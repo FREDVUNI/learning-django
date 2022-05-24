@@ -1,0 +1,25 @@
+{% extends 'guest/base.html' %}
+{% block title %}
+    Index
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <h5 class="m-3">GuestBook</h5>
+                    <div class="card-body">
+                        {% for c in comments %}
+                        <b>{{c.name}}</b><br>
+                        <small>
+                            {{ c.comment }}
+                        </small>
+                        <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

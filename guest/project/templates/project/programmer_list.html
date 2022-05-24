@@ -1,0 +1,38 @@
+{% extends 'project/base.html' %}
+
+{% block title %}
+    Tree cave
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            {% for companys in programmers %}
+            {% for company in companys.id.company_set.all %}
+                <p>{{ company.name }}</p>
+                <div class="col-md-8">
+                    <img src="{{ companys.image.url }}" alt="{{ companys.name }}" class="w-100">
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mt-2">company</h5>
+                    <p>{{ company.name }}</p>
+                    <h5 class="mt-2">Country</h5>
+                    <p>{{ companys.location }}</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="{% url 'edit' companys.slug %}" class="btn btn-primary btn-sm btn-block w-100">Edit {{ companys.name }}</a>
+                        </div>
+                        <div class="col-md-6">
+                            <form action="{% url 'delete' companys.slug %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="slug" value="{{ companys.slug }}">
+                                <button type="submit" class="btn btn-danger btn-sm btn-block w-100">Delete {{ companys.name }}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% endfor %}
+            </div>
+        </div>
+    {% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'project/base.html' %}
+{%  block title %}
+    Tree cave | Languages
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+       <div class="col-md-8">
+        {% if lang %}
+            <table class="table">
+                <tbody>
+                {% for l in lang %}
+                    <tr>
+                        <td>{{ l.name }}</td>
+                        <td><a href="{% url 'editLang' l.slug %}"><span class="fa fa-pencil-alt text-dark"></span></a></td>
+                        <td><a href="{% url 'deleteLang' l.slug %}"><span class="fa fa-trash text-dark"></span></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+       </div>
+    </div>
+    <div class="row float-right mt-5">
+        <div class="mb-5">
+            <a href="{% url 'language' %}" class="btn btn-sm btn-block w-100 btn-outline-secondary">Add language</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

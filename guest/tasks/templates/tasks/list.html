@@ -1,0 +1,57 @@
+{% extends 'tasks/base.html' %}
+{% block title %}
+    TodoList Items
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    {% for message in messages %}
+                        <span class="alert alert-success">{{ message }}</span>
+                    {% endfor %}
+                    <div class="card-body">
+                        <h5>Add Item</h5>
+                        <form action="." method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                {{ form.title }}
+                                <span class="text-danger">{{ form.errors }}</span>
+                            </div>
+                            <button type="submit" class="btn btn-outline-secondary">save item</button>
+                        </form>
+                    </div>
+                </div>
+                
+                {% if items %}
+                {% for item in items %}
+                <div class="card">
+                    <div class="card-body">    
+                        <div class="inline-block d-flex align-items-center justify-content-between">
+                            <div>
+                                <h6>{{ item.title }}</h6>
+                            </div>
+                            <div>
+                                <a href="{% url 'update' item.id %}" class="btn btn-sm">
+                                    <span class="fa fa-pencil-alt text-secondary"></span>
+                                </a>
+                                <a href="{% url 'delete' item.id %}" class="btn btn-sm">
+                                    <span class="fa fa-trash text-secondary"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="alert alert-danger">
+                    <span class="fa fa-exclamation-circle"></span>
+                     There are no available list items.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

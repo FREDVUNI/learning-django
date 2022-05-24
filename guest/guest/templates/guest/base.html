@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="shortcut icon" href="{%  static 'guest/images/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{%  static 'guest/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{%  static 'guest/css/fontawesome-all.css' %}">
+    <script src="{% static 'guest/js/jquery.min.js' %}"></script>
+    <script src="{% static 'guest/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="">
+               <img src="{%  static 'guest/images/favicon.png' %}" alt="logo" class="w-100">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'sign' %}">
+                            <span class="fas fa-user"></span>    Sign your form
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

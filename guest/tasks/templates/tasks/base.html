@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{%  static 'tasks/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{%  static 'tasks/css/fontawesome-all.css' %}">
+    <link rel="stylesheet" href="{%  static 'tasks/css/style.css' %}">
+    <script src="{% static 'tasks/js/jquery.min.js' %}"></script>
+    <script src="{% static 'tasks/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

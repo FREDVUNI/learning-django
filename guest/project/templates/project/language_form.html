@@ -1,0 +1,18 @@
+{% extends 'project/base.html' %}
+{%  block title %}
+    Tree cave | New Language
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+       <div class="col-md-8">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'project/template-form.html' %}
+            <button type="submit" class="btn btn-block w-100 btn-dark">save language</button>
+        </form>
+       </div>
+    </div>
+</div>
+{% endblock %}

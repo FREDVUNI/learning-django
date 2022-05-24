@@ -1,0 +1,24 @@
+{% extends 'project/base.html' %}
+
+{% block title %}
+    Tree cave | search
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h5 class="mb-4">search resuts for: {{ q }}</h5>
+        <div class="row">
+        {% if company %}
+           {% for companys in company %}
+            <div class="col-md-3 mb-3">
+               <img src="{{ companys.image.url }}" alt="{{ companys.name }}" class="w-100">
+               <h5 class="mt-2">{{ companys.name }}</h5>
+               <p>{{ companys.location }}</p>
+               <a href="{% url 'details' companys.slug %}" class="btn btn-sm btn-block w-50 btn-dark">view details</a>
+           </div>
+            {% endfor %}
+           {% else %}
+            <div class="alert alert-danger col-md-12">There are no search results for: <strong>{{ q }}</strong></div>
+           {% endif %}
+        </div>
+{% endblock %}

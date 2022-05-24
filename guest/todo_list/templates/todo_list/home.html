@@ -1,0 +1,42 @@
+{% extends 'todo_list/base.html' %}
+{% block title %}
+    Todo List
+{%  endblock %}
+
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+<table class="table table-bordered">
+    {% for item in all_items %}
+        {% if item.completed %}
+        <tr class="table-secondary">
+            <td>
+                <s><a href="{% url 'edit' item.id %}">{{ item.item }}</a></s>
+            </td>
+            <td>
+                <a href="{% url 'uncross' item.id %}">Uncross</a>
+            </td>
+            <td>
+                <a href="{% url 'delete' item.id %}">Delete</a>
+            </td>
+        </tr>    
+        {% else %}
+        <tr>
+            <td>
+                <a href="{% url 'edit' item.id %}">{{ item.item }}</a>
+            </td>
+            <td>
+                <a href="{% url 'crossoff' item.id %}">CrossOff</a>
+            </td>
+            <td>
+                <a href="{% url 'delete' item.id %}">Delete</a>
+            </td>
+        </tr> 
+        {% endif %}
+    {% endfor %}
+</table>
+
+{% endblock %}

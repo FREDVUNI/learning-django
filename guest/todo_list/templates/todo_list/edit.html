@@ -1,0 +1,18 @@
+{% extends 'todo_list/base.html' %}
+{% block title %}
+    Edit {{ item.item }}
+{% endblock %}    
+
+{% block content %}
+<div class="row">
+    <h5 class="ml-3">Edit {{ item.item }}</h5>
+    <div class="col-md-12 align-contents-center">
+        <form method="POST" class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            <input type="hidden" name="completed" value="{{ item.completed }}">
+            <input name="item" type="text" class="form-control mr-sm-2" placeholder="Edit Item" value="{{ item.item  }}">
+            <button type="submit" class="btn btn-outline-secondary my-2 my-sm-sm-0">Edit Item</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

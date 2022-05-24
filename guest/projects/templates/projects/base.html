@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="shortcut icon" href="{%  static 'projects/images/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{%  static 'projects/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{%  static 'projects/css/fontawesome-all.css' %}">
+    <script src="{% static 'projects/js/jquery.min.js' %}"></script>
+    <script src="{% static 'projects/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="">
+               <img src="{%  static 'projects/images/favicon.png' %}" alt="logo" class="w-100">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">RF PORTFOLIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
