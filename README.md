@@ -90,9 +90,3 @@ This repository serves as a learning project, containing various Django apps. Ea
 ![image](https://github.com/FREDVUNI/learning-django/assets/41730664/99d510aa-297f-47db-bb2d-74c69bc22263)
 ![image](https://github.com/FREDVUNI/learning-django/assets/41730664/c50a7294-a1d0-4ed1-8749-c6287a7eb2ba)
 ![image](https://github.com/FREDVUNI/learning-django/assets/41730664/d4d0452e-33e4-4230-88fe-5085dc1717ec)
-
-
-
-
-
-
