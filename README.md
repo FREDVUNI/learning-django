@@ -81,3 +81,18 @@ This repository serves as a learning project, containing various Django apps. Ea
 7. **Access the Apps:**
    - Visit `http://127.0.0.1:8000/admin/` for the Django admin.
    - Explore other apps using their respective URLs (e.g., `http://127.0.0.1:8000/guest/`, `http://127.0.0.1:8000/todo_list/`, etc.).
+
+8. **Screenshots:**
+
+![image](https://github.com/FREDVUNI/learning-django/assets/41730664/59c75206-c6d6-4673-8062-dea6957391c1)
+![image](https://github.com/FREDVUNI/learning-django/assets/41730664/efef7301-00e8-4daa-85f1-0259887aae92)
+![image](https://github.com/FREDVUNI/learning-django/assets/41730664/da374978-d8bb-43d7-a183-606ea569334a)
+![image](https://github.com/FREDVUNI/learning-django/assets/41730664/99d510aa-297f-47db-bb2d-74c69bc22263)
+![image](https://github.com/FREDVUNI/learning-django/assets/41730664/c50a7294-a1d0-4ed1-8749-c6287a7eb2ba)
+![image](https://github.com/FREDVUNI/learning-django/assets/41730664/d4d0452e-33e4-4230-88fe-5085dc1717ec)
+
+
+
+
+
+
