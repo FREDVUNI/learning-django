@@ -1,0 +1,34 @@
+# Django related
+guest/blog/__pycache__/
+guset/blog/migrations/
+
+guest/guest/__pycache__/
+guset/guest/migrations/
+
+guest/guestbook/__pycache__/
+guset/guestbook/migrations/
+
+guest/project/__pycache__/
+guset/project/migrations/
+
+guest/projects/__pycache__/
+guset/projects/migrations/
+
+guest/tasks/__pycache__/
+guset/tasks/migrations/
+
+guest/todo_list/__pycache__/
+guset/todo_list/migrations/
+
+# Python virtual environment
+env/
+
+# SQLite database file
+db.sqlite3
+
+# Media folder (uploaded user content)
+media/
+
+# Compiled Python files
+*.pyc
+*.pyo
